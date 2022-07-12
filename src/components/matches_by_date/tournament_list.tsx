@@ -3,7 +3,7 @@ import { fetchMatchesByDate } from "../../utils/data"
 import { DateSelector } from '../date_selector';
 import { useEffect, useState } from "preact/hooks";
 import { Link } from 'preact-router/match';
-import { Matches } from '../matches/list';
+import MatchesList from '../matches/list';
 
 
 const TournamentMatchesItem = (props: any) => {
@@ -18,7 +18,7 @@ const TournamentMatchesItem = (props: any) => {
                     {tournament.name}
                 </Link>
             </h1>
-            <Matches matches={matches} />
+            <MatchesList matches={matches} />
         </div>
     )
 }

@@ -4,17 +4,13 @@ import { useState } from "preact/hooks";
 import Home from '../routes/home';
 import NotFoundPage from '../routes/notfound';
 import Header from './header';
-import Tournament from '../routes/tournament';
+import TournamentMatches from '../routes/tournament';
 import Ranking from '../routes/ranking';
-
-
 
 const defaultAppContext = {
     spoilers: true,
     setSpoilers: (spoilers: boolean) => {},
 }
-
-export const AppContext = createContext(defaultAppContext)
 
 const App: FunctionalComponent = () => {
 
@@ -32,7 +28,7 @@ const App: FunctionalComponent = () => {
                     <Router>
                         <Route path="/" component={Home} />
                         <Route path="/ranking" component={Ranking} />
-                        <Route path="/tournament/:tournament_id" component={Tournament} />
+                        <Route path="/tournament/:tournament_id" component={TournamentMatches} />
                         <NotFoundPage default />
                     </Router>
                 </div>
@@ -41,4 +37,5 @@ const App: FunctionalComponent = () => {
     );
 };
 
+export const AppContext = createContext(defaultAppContext)
 export default App;
